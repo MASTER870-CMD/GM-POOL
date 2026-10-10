@@ -1,0 +1,1834 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+  <title>GM Pools | Swimming Pool Construction, Refurbishment &amp; Maintenance in Bangalore</title>
+  <meta name="description"
+    content="GM Pools is a swimming pool construction, refurbishment and maintenance company in Bangalore, also supplying pool equipment, chemicals and tiles.">
+  <meta name="theme-color" content="#161412">
+  <!-- Set this to the final live address when the site is deployed. -->
+  <link rel="canonical" href="https://www.gmpools.in/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="GM Pools | Swimming Pool Construction, Refurbishment &amp; Maintenance">
+  <meta property="og:description"
+    content="Swimming pool construction, refurbishment, plumbing, maintenance and equipment across Karnataka.">
+  <meta property="og:url" content="https://www.gmpools.in/">
+  <meta property="og:image" content="https://gmpools.in/images/completed_projects/wild_valley_nandihills/1.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!--
+    IMAGE NOTES
+    - All photography is hot-linked from the GM Pools site (see the verified image URL list).
+    - Hero image: Wild Valley, Nandi Hills, photo 1. To change it, swap the `src` on `.hero__img`
+      and the preload link below.
+    - Logo: "GM pool logo.png", in the same folder as this page. Use a transparent PNG.
+    Over the hero the logo is shown white; once the page scrolls it shows its own colours.
+    - Alt text names the project and location because the photos were not reviewed one by one.
+      Replace with descriptive alt text once the photos have been checked.
+  -->
+  <link rel="preconnect" href="https://gmpools.in" crossorigin>
+  <link rel="preload" as="image" href="https://gmpools.in/images/completed_projects/wild_valley_nandihills/1.jpg"
+    fetchpriority="high">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Hanken+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <script>document.documentElement.classList.add('js');</script>
+  <style>
+/* ==========================================================================
+   GM POOLS — styles.css
+   Same design system as the Palazzo Pools site: warm ivory and charcoal palette,
+   uppercase Bodoni display serif, Hanken Grotesk body, hairline rules, photo-led.
+   Vanilla CSS, no dependencies. Mobile-first; breakpoints at 560, 700, 800, 900, 960, 1024, 1180px.
+
+   Contents
+   1.  Tokens
+   2.  Base / reset
+   3.  Utilities & type
+   4.  Buttons & links
+   5.  Navigation, mobile menu, sticky mobile bar
+   6.  Hero
+   7.  Trust strip
+   8.  About / story / values
+   9.  Projects (jump links, galleries, lightbox)
+   10. Services
+   11. Team (dark)
+   12. Where we work
+   13. Contact & form
+   14. Footer
+   15. Motion & reduced motion
+   ========================================================================== */
+
+/* 1. TOKENS --------------------------------------------------------------- */
+:root {
+  /* Palette: warm ivory, sand, stone, charcoal, ink. Water blue and bronze as accents.
+     GM Pools' brand aqua (#6DF0F6) can replace --water if the brand should show more strongly. */
+  --ivory: #f7f4ee;
+  --ivory-2: #fbf9f5;
+  --sand: #eae2d4;
+  --stone: #d2c7b4;
+  --charcoal: #28251f;
+  --ink: #161412;
+  --muted: #655f54;
+  --water: #4f7f8e;
+  --water-deep: #2f5866;
+  --bronze: #8a6a3f;
+  --bronze-text: #7a5c33;
+  --champagne: #d9c5a1;
+
+  --line: rgba(40, 37, 31, 0.16);
+  --line-dark: rgba(247, 244, 238, 0.22);
+
+  --serif: "Bodoni Moda", "Bodoni 72", Didot, "Playfair Display", Georgia, "Times New Roman", serif;
+  --sans: "Hanken Grotesk", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  --max: 1360px;
+  --gutter: clamp(20px, 4vw, 56px);
+  --section-y: clamp(72px, 10vw, 160px);
+  --nav-h: 88px;
+  --ease: cubic-bezier(0.22, 0.7, 0.2, 1);
+}
+
+/* 2. BASE ----------------------------------------------------------------- */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 84px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--charcoal);
+  background: var(--ivory);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+img { display: block; max-width: 100%; height: auto; }
+h1, h2, h3, h4, p, figure, ul, ol, blockquote, dl, dd { margin: 0; }
+ul, ol { padding: 0; list-style: none; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; }
+address { font-style: normal; }
+
+:focus-visible { outline: 2px solid var(--water); outline-offset: 3px; }
+.on-dark :focus-visible,
+.nav:not(.is-scrolled) :focus-visible,
+.menu :focus-visible,
+.lightbox :focus-visible { outline-color: var(--champagne); }
+
+body.menu-open,
+body.lb-open { overflow: hidden; }
+
+/* 3. UTILITIES & TYPE ----------------------------------------------------- */
+.container { width: min(var(--max), 100% - var(--gutter) * 2); margin-inline: auto; }
+.section { padding-block: var(--section-y); }
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
+.skip-link {
+  position: fixed; left: 16px; top: -80px; z-index: 300;
+  padding: 12px 18px; background: var(--ivory); color: var(--ink);
+  font-weight: 600; transition: top 0.2s;
+}
+.skip-link:focus { top: 16px; }
+
+.bg-ivory { background: var(--ivory); }
+.bg-ivory-2 { background: var(--ivory-2); }
+.bg-sand { background: var(--sand); }
+.on-dark { background: var(--ink); color: var(--ivory); }
+
+.display {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-optical-sizing: auto;
+  text-transform: uppercase;
+  line-height: 1.04;
+  letter-spacing: 0.002em;
+  font-size: clamp(2rem, 6vw, 3.7rem);
+  text-wrap: balance;
+}
+.display .line { display: block; }
+.display--col { font-size: clamp(1.9rem, 5vw, 3.4rem); }
+
+.lede {
+  font-size: clamp(1.02rem, 1.25vw, 1.22rem);
+  line-height: 1.65;
+  color: var(--muted);
+  max-width: 52ch;
+}
+.on-dark .lede { color: rgba(247, 244, 238, 0.76); }
+
+.label {
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.section-head { margin-bottom: clamp(40px, 6vw, 80px); }
+.section-head--split { display: grid; gap: 22px; align-items: end; }
+@media (min-width: 900px) {
+  .section-head--split { grid-template-columns: 1.75fr 0.85fr; gap: 56px; }
+  .section-head--split .lede { justify-self: end; }
+}
+
+/* 4. BUTTONS & LINKS ------------------------------------------------------ */
+.btn {
+  --btn-bg: var(--charcoal);
+  --btn-fg: var(--ivory);
+  --btn-hover-bg: var(--bronze);
+  --btn-hover-fg: var(--ivory);
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.7em;
+  min-height: 54px; padding: 0 clamp(1.2rem, 2.2vw, 2rem);
+  font-size: 0.76rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;
+  line-height: 1.2; text-align: center;
+  border: 1px solid transparent; border-radius: 0;
+  transition: background-color 0.35s var(--ease), color 0.35s var(--ease), border-color 0.35s var(--ease);
+}
+.btn--sm { min-height: 46px; padding: 0 1.25rem; font-size: 0.7rem; }
+
+.btn--primary { background: var(--btn-bg); color: var(--btn-fg); border-color: var(--btn-bg); }
+.btn--primary:hover { background: var(--btn-hover-bg); border-color: var(--btn-hover-bg); color: var(--btn-hover-fg); }
+.on-dark .btn--primary,
+.hero .btn--primary,
+.menu .btn--primary,
+.nav:not(.is-scrolled) .btn--primary {
+  --btn-bg: var(--champagne); --btn-fg: var(--ink);
+  --btn-hover-bg: var(--ivory); --btn-hover-fg: var(--ink);
+}
+
+.btn--ghost {
+  --ghost-hover-bg: var(--charcoal); --ghost-hover-fg: var(--ivory);
+  background: transparent; color: inherit; border-color: currentColor;
+}
+.btn--ghost:hover { background: var(--ghost-hover-bg); color: var(--ghost-hover-fg); border-color: var(--ghost-hover-bg); }
+.on-dark .btn--ghost,
+.hero .btn--ghost,
+.menu .btn--ghost { --ghost-hover-bg: var(--ivory); --ghost-hover-fg: var(--ink); }
+
+.link {
+  display: inline-block; font-weight: 600; font-size: 0.95rem;
+  background: linear-gradient(currentColor, currentColor) 0 100% / 100% 1px no-repeat;
+  padding-bottom: 4px; transition: background-size 0.45s var(--ease);
+}
+.link:hover { background-size: 0 1px; background-position: 100% 100%; }
+
+.cta-row { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 20px; }
+
+/* 5. NAVIGATION ----------------------------------------------------------- */
+.nav {
+  position: fixed; inset: 0 0 auto 0; z-index: 80;
+  color: var(--ivory);
+  transition: background-color 0.5s var(--ease), color 0.4s var(--ease), box-shadow 0.5s var(--ease);
+}
+.nav::before {
+  content: ""; position: absolute; inset: 0 0 -44px; z-index: -1; pointer-events: none;
+  background: linear-gradient(180deg, rgba(16, 14, 12, 0.62), rgba(16, 14, 12, 0));
+  transition: opacity 0.5s;
+}
+.nav.is-scrolled { color: var(--charcoal); background: rgba(247, 244, 238, 0.97); box-shadow: 0 1px 0 var(--line); }
+.nav.is-scrolled::before { opacity: 0; }
+@supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .nav.is-scrolled {
+    background: rgba(247, 244, 238, 0.95);
+    -webkit-backdrop-filter: blur(16px) saturate(1.15);
+    backdrop-filter: blur(16px) saturate(1.15);
+  }
+}
+.menu-open .nav { color: var(--ivory); background: transparent; box-shadow: none; -webkit-backdrop-filter: none; backdrop-filter: none; }
+.menu-open .nav::before { opacity: 0; }
+
+.nav__inner {
+  width: min(1480px, 100% - var(--gutter) * 2); margin-inline: auto;
+  height: var(--nav-h); display: flex; align-items: center; gap: clamp(16px, 2.4vw, 40px);
+  transition: height 0.4s var(--ease);
+}
+.nav.is-scrolled .nav__inner { height: 72px; }
+
+/* Logo: the logo file is shown as it is, with no background. Over the hero it is white,
+   like the Palazzo header. Once the page scrolls it changes to its own colours on the ivory bar. */
+.nav__logo { display: block; flex: none; line-height: 0; }
+.logo {
+  height: clamp(40px, 3.6vw, 48px); width: auto;
+  filter: brightness(0) invert(1);
+  transition: height 0.4s var(--ease), filter 0.4s var(--ease);
+}
+.nav.is-scrolled .logo { height: clamp(38px, 3.5vw, 46px); filter: none; }
+.menu-open .nav .logo { filter: brightness(0) invert(1); }
+
+/* Logo fades down into place when the page loads. */
+@keyframes navLogoIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: none; } }
+.nav__logo .logo { animation: navLogoIn 1s var(--ease) 0.15s both; }
+
+/* Scroll progress: a thin water-to-bronze line along the bottom of the nav fills as you scroll. */
+.nav::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 2px;
+  background: linear-gradient(90deg, var(--water) 0%, var(--champagne) 55%, var(--bronze) 100%);
+  transform-origin: left center; transform: scaleX(var(--progress, 0));
+  pointer-events: none; transition: opacity 0.4s var(--ease);
+}
+.menu-open .nav::after { opacity: 0; }
+
+/* On the scrolled bar, the current page link picks up the bronze accent. */
+.nav.is-scrolled .nav__links a[aria-current] { color: var(--bronze-text); }
+.nav.is-scrolled .nav__links a[aria-current]::after { background: var(--bronze); }
+
+.nav__links { flex: 1; display: none; }
+.nav__links ul { display: flex; justify-content: center; gap: clamp(14px, 2vw, 32px); }
+.nav__links a { position: relative; display: inline-block; padding: 10px 0; font-size: 0.92rem; font-weight: 500; }
+.nav__links a::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: 4px; height: 1px; background: currentColor;
+  transform: scaleX(0); transform-origin: right; transition: transform 0.5s var(--ease);
+}
+.nav__links a:hover::after,
+.nav__links a[aria-current]::after { transform: scaleX(1); transform-origin: left; }
+
+.nav__actions { display: flex; align-items: center; gap: clamp(14px, 1.8vw, 28px); margin-left: auto; }
+.nav__phone { display: none; font-size: 0.92rem; font-weight: 600; white-space: nowrap; }
+.nav__phone:hover { text-decoration: underline; text-underline-offset: 5px; }
+.nav__cta { display: none; }
+
+.nav__toggle {
+  position: relative; width: 48px; height: 48px; margin-right: -8px; margin-left: auto; display: grid; place-items: center;
+}
+.nav__toggle .bars, .nav__toggle .bars::before {
+  display: block; width: 26px; height: 1.5px; background: currentColor; transition: transform 0.45s var(--ease);
+}
+.nav__toggle .bars { position: relative; transform: translateY(-4px); }
+.nav__toggle .bars::before { content: ""; position: absolute; left: 0; top: 8px; }
+.nav__toggle[aria-expanded="true"] .bars { transform: rotate(45deg); }
+.nav__toggle[aria-expanded="true"] .bars::before { transform: translateY(-8px) rotate(-90deg); top: 8px; }
+
+@media (min-width: 700px) { .nav__cta { display: inline-flex; } }
+@media (min-width: 1180px) {
+  .nav__links { display: block; }
+  .nav__phone { display: inline; }
+  .nav__toggle { display: none; }
+}
+
+/* Full-screen mobile menu */
+.menu {
+  position: fixed; inset: 0; z-index: 70; display: flex; flex-direction: column; justify-content: flex-start;
+  padding: calc(var(--nav-h) + 16px) var(--gutter) calc(32px + env(safe-area-inset-bottom));
+  background: var(--ink); color: var(--ivory); overflow-y: auto; overscroll-behavior: contain;
+  visibility: hidden; opacity: 0; clip-path: inset(0 0 100% 0);
+  transition: clip-path 0.7s var(--ease), opacity 0.4s, visibility 0s 0.7s;
+}
+.menu.is-open { visibility: visible; opacity: 1; clip-path: inset(0); transition: clip-path 0.7s var(--ease), opacity 0.3s, visibility 0s; }
+.menu__list a {
+  display: block; padding: 0.18em 0; font-family: var(--serif); white-space: nowrap;
+  font-size: clamp(1.9rem, 8vw, 3.2rem); line-height: 1.12; text-transform: uppercase;
+}
+/* Centre the menu when there is room, without pushing it up under the header when there is not. */
+.menu > nav:first-child { margin-top: auto; }
+.menu > .menu__meta:last-child { margin-bottom: auto; }
+.menu__list a[aria-current] { color: var(--champagne); }
+.menu__foot { margin-top: 32px; display: grid; gap: 12px; max-width: 420px; }
+.menu__foot .btn { width: 100%; }
+.menu__meta { margin-top: 24px; font-size: 0.85rem; color: rgba(247, 244, 238, 0.65); }
+
+/* Sticky mobile bar: tap-to-call + enquiry */
+.mbar {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 60; display: none;
+  grid-template-columns: 1fr 1.25fr; background: var(--ink);
+  border-top: 1px solid var(--line-dark); padding-bottom: env(safe-area-inset-bottom);
+  transition: transform 0.5s var(--ease);
+}
+.mbar.is-hidden { transform: translateY(110%); }
+.mbar a {
+  display: flex; align-items: center; justify-content: center; gap: 0.6em; min-height: 56px;
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+}
+.mbar__call { color: var(--ivory); }
+.mbar__estimate { background: var(--champagne); color: var(--ink); }
+@media (max-width: 899px) {
+  .mbar { display: grid; }
+  body { padding-bottom: calc(56px + env(safe-area-inset-bottom)); }
+}
+body.menu-open .mbar { display: none; }
+
+/* 6. HERO ----------------------------------------------------------------- */
+.hero {
+  position: relative; isolation: isolate; overflow: clip;
+  min-height: 100vh; min-height: 100svh;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  color: var(--ivory); background: var(--ink);
+}
+.hero__media { position: absolute; inset: 0; z-index: -2; animation: heroZoom 2.8s var(--ease) both; }
+.hero__img {
+  position: absolute; left: 0; top: -7%; width: 100%; height: 114%; object-fit: cover; object-position: center 55%;
+  transform: translate3d(0, var(--py, 0px), 0); will-change: transform;
+}
+.hero__scrim {
+  position: absolute; inset: 0; z-index: -1;
+  background:
+    linear-gradient(90deg, rgba(14, 12, 10, 0.6) 0%, rgba(14, 12, 10, 0.15) 60%, rgba(14, 12, 10, 0) 100%),
+    linear-gradient(180deg, rgba(14, 12, 10, 0.5) 0%, rgba(14, 12, 10, 0.08) 26%, rgba(14, 12, 10, 0.2) 52%, rgba(14, 12, 10, 0.88) 100%);
+}
+.hero__content { padding-top: calc(var(--nav-h) + 48px); padding-bottom: clamp(36px, 5vw, 64px); }
+
+.hero__title {
+  font-family: var(--serif); font-weight: 400; font-optical-sizing: auto; text-transform: uppercase;
+  font-size: clamp(2.3rem, 9vw, 7.5rem); line-height: 0.98; letter-spacing: -0.005em;
+}
+.hero__title .line { display: block; overflow: hidden; padding: 0.04em 0 0.1em; margin-bottom: -0.1em; }
+.hero__title .line > span { display: block; transform: translateY(108%); animation: rise 1.15s var(--ease) forwards; animation-delay: calc(0.35s + var(--i, 0) * 0.15s); }
+
+.hero__lede {
+  margin-top: clamp(22px, 3vw, 36px); max-width: 48ch;
+  font-size: clamp(1rem, 1.3vw, 1.22rem); line-height: 1.6; color: rgba(247, 244, 238, 0.9);
+  opacity: 0; animation: fadeIn 1s var(--ease) 0.95s forwards;
+}
+.hero .cta-row { margin-top: clamp(26px, 3vw, 38px); opacity: 0; animation: fadeIn 1s var(--ease) 1.1s forwards; }
+
+.hero__foot {
+  display: grid; gap: 18px 40px; padding-block: 22px clamp(26px, 3vw, 38px);
+  border-top: 1px solid var(--line-dark);
+  opacity: 0; animation: fadeIn 1s var(--ease) 1.3s forwards;
+}
+.hero__fact { display: grid; gap: 2px; }
+.hero__fact strong { font-weight: 600; font-size: 0.98rem; }
+.hero__fact span { font-size: 0.9rem; color: rgba(247, 244, 238, 0.75); }
+.hero__phone { display: grid; gap: 2px; }
+.hero__phone small { font-size: 0.74rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(247, 244, 238, 0.7); }
+.hero__phone b {
+  font-family: var(--serif); font-weight: 400; font-size: clamp(1.6rem, 2.6vw, 2.4rem); line-height: 1.1;
+  background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat; transition: background-size 0.5s var(--ease); width: fit-content;
+}
+.hero__phone:hover b { background-size: 100% 1px; }
+@media (min-width: 900px) {
+  .hero__foot { grid-template-columns: 1fr 1fr auto; align-items: end; }
+  .hero__phone { text-align: right; justify-items: end; }
+}
+@media (max-width: 899px) {
+  .hero__phone { display: none; }                 /* the sticky call bar covers phones */
+  .hero__foot { padding-bottom: 28px; }
+  .hero { padding-bottom: 56px; }
+}
+
+/* 7. TRUST STRIP ---------------------------------------------------------- */
+.trust { padding-block: clamp(36px, 5vw, 60px); }
+.trust__grid { display: grid; gap: 28px 20px; grid-template-columns: repeat(2, 1fr); align-items: center; }
+.trust__item { display: grid; gap: 6px; padding-left: 18px; border-left: 1px solid var(--line); }
+.trust__num { font-family: var(--serif); font-size: clamp(2.2rem, 4vw, 3.4rem); line-height: 1; font-variant-numeric: tabular-nums lining-nums; }
+.trust__item--text .trust__num { font-family: var(--serif); font-size: clamp(1.4rem, 2.6vw, 2rem); line-height: 1.2; }
+.trust__label { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
+@media (min-width: 900px) { .trust__grid { grid-template-columns: repeat(4, 1fr); } }
+
+/* 8. ABOUT / STORY / VALUES ----------------------------------------------- */
+.story__grid { display: grid; gap: clamp(48px, 7vw, 96px); align-items: center; }
+.story__copy .display { margin-bottom: clamp(24px, 3vw, 40px); }
+.story__copy .body { max-width: 56ch; color: var(--muted); font-size: 1.04rem; }
+.story__copy .body p + p { margin-top: 1.1em; }
+.story__media { position: relative; margin-bottom: 12%; }
+.story__main { aspect-ratio: 4 / 5; overflow: hidden; background: var(--sand); }
+.story__main img, .story__inset img { width: 100%; height: 100%; object-fit: cover; }
+.story__inset {
+  position: absolute; left: -6%; bottom: -12%; width: 46%; aspect-ratio: 1; overflow: hidden;
+  border: 8px solid var(--ivory); background: var(--sand);
+}
+@media (min-width: 900px) {
+  .story__grid { grid-template-columns: 1fr 1fr; }
+  .story__media { margin-bottom: 10%; }
+}
+
+.values { display: grid; gap: 0; margin-top: clamp(48px, 6vw, 96px); }
+.value { padding: 28px 0 32px; border-top: 1px solid var(--line); }
+.value__icon { width: 44px; height: 44px; object-fit: contain; margin-bottom: 16px; }
+.value h3 { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--bronze-text); }
+.value p { margin-top: 12px; max-width: 34ch; font-size: 1.04rem; }
+@media (min-width: 900px) {
+  .values { grid-template-columns: repeat(3, 1fr); column-gap: clamp(28px, 4vw, 64px); }
+}
+
+/* On phones and tablets the overlapping photo stays inside the screen edge. */
+@media (max-width: 899px) { .story__inset { left: 3%; width: 42%; border-width: 6px; } }
+
+/* 9. PROJECTS ------------------------------------------------------------- */
+.jump { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: clamp(40px, 5vw, 64px); }
+.jump a {
+  padding: 9px 14px; border: 1px solid var(--line); font-size: 0.82rem; line-height: 1.3;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+.jump a:hover { background: var(--charcoal); color: var(--ivory); border-color: var(--charcoal); }
+
+.proj { scroll-margin-top: 90px; margin-top: clamp(48px, 6vw, 88px); }
+.proj:first-of-type { margin-top: 0; }
+.proj__head {
+  display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 20px;
+  padding-bottom: 14px; margin-bottom: 20px; border-bottom: 1px solid var(--charcoal);
+}
+.proj__head h3 { font-family: var(--serif); font-weight: 400; text-transform: uppercase; font-size: clamp(1.3rem, 2.4vw, 1.9rem); line-height: 1.1; }
+.proj__head span { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--bronze-text); }
+
+.proj-grid { display: grid; gap: 10px; grid-template-columns: repeat(2, 1fr); }
+.ptile {
+  position: relative; display: block; width: 100%; overflow: hidden;
+  aspect-ratio: 4 / 3; background: var(--sand);
+}
+.ptile img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s var(--ease); }
+.ptile::after {
+  content: ""; position: absolute; inset: 0; background: var(--water-deep); opacity: 0; mix-blend-mode: multiply;
+  transition: opacity 0.6s var(--ease); pointer-events: none;
+}
+.ptile:hover img, .ptile:focus-visible img { transform: scale(1.05); }
+.ptile:hover::after, .ptile:focus-visible::after { opacity: 0.14; }
+@media (min-width: 900px) { .proj-grid { grid-template-columns: repeat(3, 1fr); gap: 14px; } }
+@media (hover: none) { .ptile::after { display: none; } }
+
+/* Lightbox */
+.lightbox {
+  border: 0; padding: 0; margin: 0; max-width: none; max-height: none; width: 100%; height: 100%;
+  background: rgba(14, 12, 10, 0.97); color: var(--ivory);
+}
+.lightbox::backdrop { background: rgba(0, 0, 0, 0.7); }
+.lightbox[open] {
+  display: grid; grid-template-columns: 52px minmax(0, 1fr) 52px; grid-template-rows: 64px minmax(0, 1fr);
+  grid-template-areas: "bar bar bar" "prev stage next"; animation: lbIn 0.45s var(--ease);
+}
+.lightbox__bar { grid-area: bar; display: flex; align-items: center; justify-content: space-between; padding: 0 clamp(14px, 3vw, 32px); }
+.lightbox__count { font-size: 0.82rem; letter-spacing: 0.1em; color: rgba(247, 244, 238, 0.7); font-variant-numeric: tabular-nums; }
+.lightbox__btn { width: 48px; height: 48px; display: grid; place-items: center; transition: background-color 0.3s; }
+.lightbox__btn:hover { background: rgba(247, 244, 238, 0.12); }
+.lightbox__btn--prev { grid-area: prev; align-self: center; justify-self: center; }
+.lightbox__btn--next { grid-area: next; align-self: center; justify-self: center; }
+.lightbox__stage { grid-area: stage; display: grid; grid-template-rows: minmax(0, 1fr) auto; min-height: 0; min-width: 0; padding-bottom: clamp(12px, 2vw, 24px); }
+.lightbox__img { width: 100%; height: 100%; min-height: 0; object-fit: contain; transition: opacity 0.35s var(--ease); }
+.lightbox__img.is-switching { opacity: 0; }
+.lightbox__cap { padding: 16px 8px 0; text-align: center; display: grid; gap: 2px; }
+.lightbox__cap strong { font-family: var(--serif); font-weight: 400; font-size: clamp(1.1rem, 2vw, 1.6rem); }
+.lightbox__cap span { font-size: 0.86rem; color: rgba(247, 244, 238, 0.68); }
+@media (min-width: 900px) { .lightbox[open] { grid-template-columns: 96px minmax(0, 1fr) 96px; } }
+
+/* 10. SERVICES ------------------------------------------------------------ */
+.feature-grid { display: grid; gap: clamp(28px, 3.4vw, 48px) clamp(20px, 3vw, 40px); }
+.feature { display: block; }
+.feature__media { position: relative; overflow: hidden; background: var(--sand); aspect-ratio: 4 / 3; }
+.feature__media img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.4s var(--ease); }
+.feature__media::after {
+  content: ""; position: absolute; inset: 0; background: var(--water-deep); opacity: 0; mix-blend-mode: multiply; transition: opacity 0.7s var(--ease);
+}
+.feature:hover .feature__media img, .feature:focus-visible .feature__media img { transform: scale(1.05); }
+.feature:hover .feature__media::after, .feature:focus-visible .feature__media::after { opacity: 0.18; }
+.feature__body { display: grid; gap: 10px; padding-top: 20px; }
+.feature__index {
+  display: inline-flex; align-items: center; gap: 12px;
+  font-size: 0.74rem; font-weight: 700; letter-spacing: 0.18em; color: var(--bronze-text);
+}
+.feature__icon { width: 40px; height: 40px; object-fit: contain; }
+.feature h3 { font-family: var(--serif); font-weight: 400; font-size: clamp(1.4rem, 2.4vw, 2rem); line-height: 1.12; text-transform: uppercase; }
+.feature p { max-width: 44ch; color: var(--muted); }
+.feature__go {
+  margin-top: 6px; width: fit-content; font-size: 0.74rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;
+  padding-bottom: 5px; background: linear-gradient(var(--water), var(--water)) 0 100% / 100% 1px no-repeat;
+}
+.feature__go svg { display: inline-block; vertical-align: -2px; margin-left: 8px; transition: transform 0.5s var(--ease); }
+.feature:hover .feature__go svg { transform: translateX(5px); }
+@media (min-width: 700px) { .feature-grid { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1100px) { .feature-grid { grid-template-columns: repeat(4, 1fr); } }
+
+.service-index { margin-top: clamp(64px, 8vw, 120px); padding-top: clamp(40px, 5vw, 64px); border-top: 1px solid var(--line); }
+.service-index__head { display: grid; gap: 14px; margin-bottom: clamp(32px, 4vw, 56px); }
+.service-index__head h3 { font-family: var(--serif); font-weight: 400; text-transform: uppercase; font-size: clamp(1.6rem, 3vw, 2.5rem); line-height: 1.1; }
+.service-index__head p { color: var(--muted); max-width: 52ch; }
+.service-cols { display: grid; gap: 36px 56px; }
+.service-col h4 { font-size: 0.74rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--bronze-text); padding-bottom: 14px; border-bottom: 1px solid var(--charcoal); }
+.service-col li { padding: 14px 0; border-bottom: 1px solid var(--line); font-size: 1.02rem; }
+.service-col li small { display: block; font-size: 0.86rem; color: var(--muted); }
+@media (min-width: 800px) { .service-cols { grid-template-columns: repeat(3, 1fr); } }
+
+.services__cta {
+  margin-top: clamp(48px, 6vw, 88px); padding: clamp(28px, 5vw, 60px); background: var(--sand);
+  display: grid; gap: 28px; align-items: center;
+}
+.services__cta h3 { font-family: var(--serif); font-weight: 400; text-transform: uppercase; font-size: clamp(1.5rem, 3vw, 2.5rem); line-height: 1.1; }
+.services__cta p { margin-top: 12px; color: var(--muted); max-width: 54ch; }
+@media (min-width: 900px) { .services__cta { grid-template-columns: 1.4fr 1fr; } .services__cta .cta-row { justify-content: flex-end; } }
+
+/* 11. TEAM (dark, with photo background) ---------------------------------- */
+.newbuild { position: relative; isolation: isolate; overflow: clip; }
+.newbuild__bg { position: absolute; inset: 0; z-index: -2; }
+.newbuild__bg img { width: 100%; height: 100%; object-fit: cover; }
+.newbuild::before {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background: linear-gradient(180deg, rgba(14, 12, 10, 0.9) 0%, rgba(14, 12, 10, 0.76) 45%, rgba(14, 12, 10, 0.94) 100%);
+}
+.newbuild__top { display: grid; gap: clamp(32px, 5vw, 64px); align-items: end; }
+.newbuild__title { font-size: clamp(2rem, 6vw, 4rem); }
+.newbuild .lede { margin-top: 24px; }
+.warranty {
+  padding: clamp(24px, 3.2vw, 44px); border: 1px solid rgba(217, 197, 161, 0.5); background: rgba(14, 12, 10, 0.45);
+}
+@supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .warranty { -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
+}
+.warranty .warranty__label { color: var(--champagne); display: flex; align-items: center; gap: 12px; }
+.warranty__label::before { content: ""; width: 34px; height: 1px; background: currentColor; }
+.warranty .warranty__big { color: var(--ivory); margin-top: 18px; font-family: var(--serif); font-size: clamp(1.5rem, 2.8vw, 2.3rem); line-height: 1.15; text-transform: uppercase; }
+.warranty p { margin-top: 16px; color: rgba(247, 244, 238, 0.8); }
+.pillars { display: grid; gap: 0; margin-top: clamp(48px, 6vw, 88px); }
+.pillar { padding: 26px 0 30px; border-top: 1px solid var(--line-dark); }
+.pillar h3 { font-family: var(--serif); font-weight: 400; font-size: 1.35rem; line-height: 1.2; text-transform: uppercase; }
+.pillar p { margin-top: 12px; color: rgba(247, 244, 238, 0.74); font-size: 0.98rem; max-width: 36ch; }
+@media (min-width: 900px) {
+  .newbuild__top { grid-template-columns: 1.3fr 0.8fr; }
+  .pillars { grid-template-columns: repeat(4, 1fr); column-gap: clamp(24px, 3vw, 48px); }
+}
+
+/* 12. WHERE WE WORK ------------------------------------------------------- */
+.area__grid { display: grid; gap: clamp(40px, 6vw, 80px); align-items: start; }
+.area__copy .display { margin-bottom: 24px; }
+.area__copy > p { max-width: 48ch; color: var(--muted); }
+.area__list { margin-top: 28px; border-top: 1px solid var(--line); columns: 1; }
+.area__list li {
+  display: flex; align-items: center; gap: 14px; padding: 13px 0; border-bottom: 1px solid var(--line);
+}
+.area__list li::before { content: ""; flex: none; width: 9px; height: 9px; border-radius: 50%; background: var(--bronze); }
+.area__list li.is-home::before { box-shadow: 0 0 0 4px rgba(138, 106, 63, 0.22); }
+.area__list small { margin-left: auto; font-size: 0.74rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--bronze-text); font-weight: 700; }
+
+.area__photos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.area__photos figure { aspect-ratio: 4 / 5; overflow: hidden; background: var(--sand); }
+.area__photos img { width: 100%; height: 100%; object-fit: cover; }
+@media (min-width: 900px) {
+  .area__grid { grid-template-columns: 0.9fr 1.1fr; align-items: center; }
+  .area__photos figure:nth-child(2) { margin-top: 40px; }
+}
+
+/* 13. CONTACT & FORM ------------------------------------------------------ */
+.contact__grid { display: grid; gap: clamp(44px, 6vw, 88px); align-items: start; }
+.contact__title { font-size: clamp(2rem, 6vw, 4.2rem); }
+.contact .lede { margin-top: 24px; }
+.contact__call { margin-top: 32px; }
+.contact__details { margin-top: clamp(32px, 4vw, 48px); display: grid; gap: 22px; }
+.contact__details dt { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.17em; text-transform: uppercase; color: var(--champagne); }
+.contact__details dd { margin-top: 4px; font-size: 1.08rem; }
+.contact__details a { background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat; transition: background-size 0.45s var(--ease); overflow-wrap: anywhere; }
+.contact__details a:hover { background-size: 100% 1px; }
+.contact__phone-big { font-family: var(--serif); font-size: clamp(1.8rem, 3.4vw, 2.8rem); line-height: 1.1; }
+
+.form { padding: clamp(24px, 3.4vw, 48px); background: var(--ivory); color: var(--charcoal); }
+.form h3 { font-family: var(--serif); font-weight: 400; text-transform: uppercase; font-size: clamp(1.4rem, 2.2vw, 1.9rem); line-height: 1.12; margin-bottom: 26px; }
+.field { display: grid; gap: 6px; margin-bottom: 22px; }
+.field label { font-size: 0.74rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; }
+.field input, .field textarea {
+  width: 100%; min-height: 52px; padding: 12px 0; font: inherit; font-size: 1rem; color: var(--charcoal);
+  background: transparent; border: 0; border-bottom: 1px solid rgba(40, 37, 31, 0.4); border-radius: 0; transition: border-color 0.3s;
+}
+.field textarea { min-height: 120px; resize: vertical; }
+.field input:hover, .field textarea:hover { border-bottom-color: var(--charcoal); }
+.field input:focus-visible, .field textarea:focus-visible { outline: 0; border-bottom: 2px solid var(--water); padding-bottom: 11px; }
+.field input:user-invalid, .field textarea:user-invalid { border-bottom-color: #9a3b2e; }
+.field--row { display: grid; gap: 0 24px; }
+@media (min-width: 560px) { .field--row { grid-template-columns: 1fr 1fr; } }
+.form__hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.form .btn { width: 100%; margin-top: 6px; }
+.form .btn--primary { --btn-bg: var(--charcoal); --btn-fg: var(--ivory); --btn-hover-bg: var(--bronze); --btn-hover-fg: var(--ivory); }
+.form__status { margin-top: 18px; font-size: 0.95rem; min-height: 1.5em; }
+.form__status.is-ok { color: var(--water-deep); }
+.form__status.is-err { color: #9a3b2e; }
+.form__fine { margin-top: 14px; font-size: 0.8rem; color: var(--muted); }
+.form__fine .link { color: var(--charcoal); font-size: inherit; }
+@media (min-width: 960px) { .contact__grid { grid-template-columns: 1fr 1fr; } }
+
+/* 14. FOOTER -------------------------------------------------------------- */
+.footer { padding: clamp(52px, 6vw, 88px) 0 28px; }
+.footer__grid { display: grid; gap: 40px; padding-bottom: 44px; border-bottom: 1px solid var(--line-dark); }
+.footer__logo-plate { display: inline-block; margin-bottom: 18px; }
+.footer__logo { height: 56px; width: auto; filter: brightness(0) invert(1); }
+.footer__brand p { font-size: 0.92rem; color: rgba(247, 244, 238, 0.74); max-width: 32ch; }
+.footer__brand p + p { margin-top: 6px; }
+.footer h2 { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.17em; text-transform: uppercase; color: var(--champagne); margin-bottom: 16px; }
+.footer li + li { margin-top: 8px; }
+.footer a { color: rgba(247, 244, 238, 0.86); background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat; transition: background-size 0.45s var(--ease); overflow-wrap: anywhere; }
+.footer a:hover { background-size: 100% 1px; color: var(--ivory); }
+.footer address { font-size: 0.95rem; color: rgba(247, 244, 238, 0.86); }
+.footer__base { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px 24px; padding-top: 24px; font-size: 0.82rem; color: rgba(247, 244, 238, 0.6); }
+@media (min-width: 800px) { .footer__grid { grid-template-columns: 1.3fr 1fr 1fr 1fr; gap: 48px; } }
+
+/* 15. MOTION -------------------------------------------------------------- */
+@keyframes rise { to { transform: translateY(0); } }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+@keyframes heroZoom { from { transform: scale(1.07); } to { transform: scale(1); } }
+@keyframes lbIn { from { opacity: 0; } to { opacity: 1; } }
+
+/* Scroll reveals are only armed when JS has run (html.js). Without JS, all content is visible. */
+.js .reveal { opacity: 0; transform: translateY(24px); transition: opacity 1s var(--ease), transform 1s var(--ease); transition-delay: var(--d, 0s); }
+.js .reveal.is-in { opacity: 1; transform: none; }
+
+/* Story photos wipe in from the top, like the Palazzo site. */
+.js .story__main, .js .story__inset, .js .feature__media { clip-path: inset(0 0 100% 0); transition: clip-path 1.3s var(--ease); transition-delay: var(--d, 0s); }
+.js .story__main.is-in, .js .story__inset.is-in, .js .feature__media.is-in { clip-path: inset(0); }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.001ms !important; animation-delay: 0s !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; transition-delay: 0s !important; }
+  .hero__title .line > span, .hero__lede, .hero .cta-row, .hero__foot { opacity: 1; transform: none; animation: none; }
+  .hero__media { animation: none; }
+  .js .reveal, .js .story__main, .js .story__inset, .js .feature__media { opacity: 1; transform: none; clip-path: none; }
+}
+
+  /* ---- Pages: each menu item opens its own page. Only the current page is shown. ---- */
+.js [data-page]:not(.is-current) { display: none !important; }
+.js [data-page].is-current { animation: pageIn 0.7s var(--ease) both; }
+@keyframes pageIn { from { opacity: 0; } to { opacity: 1; } }
+  </style>
+  
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HomeAndConstructionBusiness",
+    "name": "GM Pools",
+    "description": "Swimming pool construction, refurbishment, plumbing, maintenance and equipment supplier in Bangalore, Karnataka.",
+    "url": "https://www.gmpools.in/",
+    "telephone": "+91-7975692269",
+    "email": "info@gmpools.in",
+    "logo": "https://gmpools.in/images/logo.png",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Post Office Rd, Nelamangala",
+      "addressLocality": "Bengaluru",
+      "postalCode": "562123",
+      "addressRegion": "Karnataka",
+      "addressCountry": "IN"
+    },
+    "areaServed": [
+      { "@type": "AdministrativeArea", "name": "Karnataka, India" }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- ===================== NAVIGATION ===================== -->
+  <header class="nav" data-nav>
+    <div class="nav__inner">
+      <a class="nav__logo" href="#home" aria-label="GM Pools, back to top">
+        <img class="logo" src="GM pool logo.png" alt="GM Pools" decoding="async">
+      </a>
+
+      <nav class="nav__links" aria-label="Primary">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#areas">Where We Work</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav__actions">
+        <a class="nav__phone" href="tel:+917975692269">+91 79756 92269</a>
+        <a class="btn btn--primary btn--sm nav__cta" href="#contact">Send an Enquiry</a>
+      </div>
+
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="menu">
+        <span class="sr-only">Open menu</span>
+        <span class="bars" aria-hidden="true"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Full-screen mobile menu -->
+  <div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Site menu">
+    <nav aria-label="Mobile">
+      <ul class="menu__list">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#areas">Where We Work</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="menu__foot">
+      <a class="btn btn--primary" href="#contact">Send an Enquiry</a>
+      <a class="btn btn--ghost" href="tel:+917975692269">Call +91 79756 92269</a>
+    </div>
+    <p class="menu__meta">Swimming pool construction, refurbishment and maintenance in Bangalore and across Karnataka.</p>
+  </div>
+
+  <main id="main">
+
+    <!-- ===================== HERO ===================== -->
+    <section class="hero" id="home" data-page="home" aria-labelledby="hero-title">
+      <div class="hero__media">
+        <img class="hero__img" src="https://gmpools.in/images/completed_projects/wild_valley_nandihills/1.jpg"
+          alt="Completed swimming pool project at Wild Valley, Nandi Hills" fetchpriority="high" decoding="async">
+      </div>
+      <div class="hero__scrim" aria-hidden="true"></div>
+
+      <div class="container hero__content">
+        <h1 class="hero__title" id="hero-title">
+          <span class="line"><span style="--i:0">For all your</span></span>
+          <span class="line"><span style="--i:1">pool needs.</span></span>
+        </h1>
+        <p class="hero__lede">GM Pools is one of the leading swimming pool construction and refurbishment companies in
+          Bangalore. We also supply pool equipment, chemicals and tiles.</p>
+        <div class="cta-row">
+          <a class="btn btn--primary" href="#contact">Send an Enquiry</a>
+          <a class="btn btn--ghost" href="#projects">View Completed Projects</a>
+        </div>
+      </div>
+
+      <div class="container hero__foot">
+        <div class="hero__fact">
+          <strong>Bengaluru based</strong>
+          <span>Construction, refurbishment and plumbing</span>
+        </div>
+        <div class="hero__fact">
+          <strong>Maintenance contracts</strong>
+          <span>Monthly or yearly, in and around Karnataka</span>
+        </div>
+        <a class="hero__phone" href="tel:+917975692269">
+          <small>Call us today</small>
+          <b>+91 79756 92269</b>
+        </a>
+      </div>
+    </section>
+
+    <!-- ===================== TRUST STRIP ===================== -->
+    <section class="trust bg-sand" aria-label="Track record" data-page="home">
+      <div class="container">
+        <ul class="trust__grid">
+          <li class="trust__item">
+            <p class="trust__num" data-count="13" data-suffix="+">13</p>
+            <p class="trust__label">Completed projects shown</p>
+          </li>
+          <li class="trust__item">
+            <p class="trust__num" data-count="46" data-suffix="+">46</p>
+            <p class="trust__label">Project photos</p>
+          </li>
+          <li class="trust__item trust__item--text">
+            <p class="trust__num">Bengaluru</p>
+            <p class="trust__label">Based in</p>
+          </li>
+          <li class="trust__item trust__item--text">
+            <p class="trust__num">Karnataka</p>
+            <p class="trust__label">Maintenance contracts</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===================== EXPLORE (home page) ===================== -->
+    <section class="section bg-ivory-2" id="explore" data-page="home" aria-labelledby="explore-title">
+      <div class="container">
+        <header class="section-head section-head--split">
+          <h2 class="display reveal" id="explore-title">Explore GM Pools</h2>
+          <p class="lede reveal" style="--d:.1s">Choose a section to open its own page: our services, completed projects,
+            the team behind our work, and where we operate.</p>
+        </header>
+
+        <div class="feature-grid">
+            <a class="feature" href="#services">
+              <div class="feature__media reveal">
+                <img src="https://gmpools.in/images/completed_projects/bamboo_club/2.jpg" alt="Completed pool project at Bamboo Club, Coorg" loading="lazy" decoding="async">
+              </div>
+              <div class="feature__body">
+                <span class="feature__index">01</span>
+                <h3>Services</h3>
+                <p>Construction, refurbishment, plumbing, maintenance and supplies.</p>
+                <span class="feature__go">View services <svg width="18" height="10" viewBox="0 0 18 10" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M0 5h16M12 1l4 4-4 4" /></svg></span>
+              </div>
+            </a>
+            <a class="feature" href="#projects">
+              <div class="feature__media reveal">
+                <img src="https://gmpools.in/images/completed_projects/wild_valley_nandihills/2.jpg" alt="Completed pool project at Wild Valley, Nandi Hills" loading="lazy" decoding="async">
+              </div>
+              <div class="feature__body">
+                <span class="feature__index">02</span>
+                <h3>Completed Projects</h3>
+                <p>Browse our completed pools across Karnataka.</p>
+                <span class="feature__go">View projects <svg width="18" height="10" viewBox="0 0 18 10" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M0 5h16M12 1l4 4-4 4" /></svg></span>
+              </div>
+            </a>
+            <a class="feature" href="#about">
+              <div class="feature__media reveal">
+                <img src="https://gmpools.in/images/completed_projects/skylark/1.jpg" alt="Completed pool project at Skylark Homestay, Sakaleshpura" loading="lazy" decoding="async">
+              </div>
+              <div class="feature__body">
+                <span class="feature__index">03</span>
+                <h3>About GM Pools</h3>
+                <p>Our vision, our mission and the team behind every pool.</p>
+                <span class="feature__go">Read more <svg width="18" height="10" viewBox="0 0 18 10" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M0 5h16M12 1l4 4-4 4" /></svg></span>
+              </div>
+            </a>
+            <a class="feature" href="#areas">
+              <div class="feature__media reveal">
+                <img src="https://gmpools.in/images/completed_projects/ganga_farm/1.jpg" alt="Completed pool project at Ganga Farm, Nelamangala" loading="lazy" decoding="async">
+              </div>
+              <div class="feature__body">
+                <span class="feature__index">04</span>
+                <h3>Where We Work</h3>
+                <p>Bengaluru, Karnataka, and our maintenance contracts across the state.</p>
+                <span class="feature__go">See locations <svg width="18" height="10" viewBox="0 0 18 10" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M0 5h16M12 1l4 4-4 4" /></svg></span>
+              </div>
+            </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== ABOUT ===================== -->
+    <section class="section bg-ivory" id="about" data-page="about" aria-labelledby="about-title">
+      <div class="container">
+        <div class="story__grid">
+          <div class="story__copy">
+            <h2 class="display display--col reveal" id="about-title">
+              <span class="line">A consolidated team,</span>
+              <span class="line">focused on customers.</span>
+            </h2>
+            <div class="body reveal" style="--d:.1s">
+              <p>GM Pools is one of the leading swimming pool construction and refurbishment companies located in
+                Bangalore. We also supply swimming pool equipment and accessories, chemicals and all types of pool
+                tiles, and we undertake maintenance contracts on a monthly or yearly basis in and around Karnataka.</p>
+              <p>We are also suppliers of water entertainment, amusement, fountain and competition equipment. Our team
+                is made up of well-experienced and qualified young professionals who strive to work hard for customer
+                satisfaction.</p>
+            </div>
+          </div>
+
+          <div class="story__media">
+            <figure class="story__main reveal">
+              <img src="https://gmpools.in/images/completed_projects/skylark/1.jpg"
+                alt="Completed swimming pool project at Skylark Homestay, Sakaleshpura" loading="lazy" decoding="async">
+            </figure>
+            <figure class="story__inset reveal" style="--d:.2s">
+              <img src="https://gmpools.in/images/completed_projects/maddur/1.jpg"
+                alt="Completed swimming pool project at Maddur" loading="lazy" decoding="async">
+            </figure>
+          </div>
+        </div>
+
+        <div class="values">
+          <div class="value reveal">
+            <img class="value__icon" src="https://www.gmpools.in/images/vision_icon.png" alt="" width="44" height="44"
+              loading="lazy">
+            <h3>Vision</h3>
+            <p>To be the country’s most respected swimming pool company.</p>
+          </div>
+          <div class="value reveal" style="--d:.1s">
+            <img class="value__icon" src="https://www.gmpools.in/images/mission_icon.png" alt="" width="44" height="44"
+              loading="lazy">
+            <h3>Mission</h3>
+            <p>Commitment to our clients to provide high standard products.</p>
+          </div>
+          <div class="value reveal" style="--d:.2s">
+            <img class="value__icon" src="https://www.gmpools.in/images/quality_icon.png" alt="" width="44" height="44"
+              loading="lazy">
+            <h3>Quality</h3>
+            <p>To provide quality services and products to our valued customers.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PROJECTS ===================== -->
+    <section class="section bg-ivory-2" id="projects" data-page="projects" aria-labelledby="projects-title">
+      <div class="container">
+        <header class="section-head section-head--split">
+          <h2 class="display reveal" id="projects-title">Completed projects</h2>
+          <p class="lede reveal" style="--d:.1s">Explore our completed pool projects across Karnataka, from homestays
+            and farms to stadiums and resorts.</p>
+        </header>
+
+        <nav class="jump reveal" aria-label="Jump to a project">
+          <a href="#p-bamboo">Bamboo Club, Coorg</a>
+          <a href="#p-corporation">Corporation Pool, Hubballi</a>
+          <a href="#p-gowrishankar">Gowrishankar, Tumkur</a>
+          <a href="#p-harish">Harish Revankar, Hubballi</a>
+          <a href="#p-sharanya-mysore">Sharanya Farm, Mysore Road</a>
+          <a href="#p-sharanya-krpet">Sharanya Farm, K. R. Pet</a>
+          <a href="#p-skylark">Skylark Homestay, Sakaleshpura</a>
+          <a href="#p-olympic">Olympic Sports Stadium, Bagalkot</a>
+          <a href="#p-wv-nandi">Wild Valley, Nandi Hills</a>
+          <a href="#p-wv-sakaleshpur">Wild Valley, Sakaleshpur</a>
+          <a href="#p-maddur">Maddur</a>
+          <a href="#p-ganga">Ganga Farm, Nelamangala</a>
+          <a href="#p-coimbatore">Coimbatore</a>
+        </nav>
+
+        <!-- Project galleries. Each photo opens in the lightbox, grouped by project. -->
+
+        <div class="proj" id="p-bamboo">
+          <header class="proj__head"><h3>Bamboo Club</h3><span>Coorg</span></header>
+          <div class="proj-grid">
+            <button class="ptile reveal" type="button" data-lightbox="bamboo" data-label="Bamboo Club, Coorg" data-note="Photo 1 of 3" aria-label="View photo 1: Bamboo Club, Coorg"><img src="https://gmpools.in/images/completed_projects/bamboo_club/1.jpg" alt="Completed pool project at Bamboo Club, Coorg, photo 1" loading="lazy" decoding="async"></button>
+            <button class="ptile reveal" type="button" data-lightbox="bamboo" data-label="Bamboo Club, Coorg" data-note="Photo 2 of 3" aria-label="View photo 2: Bamboo Club, Coorg"><img src="https://gmpools.in/images/completed_projects/bamboo_club/2.jpg" alt="Completed pool project at Bamboo Club, Coorg, photo 2" loading="lazy" decoding="async"></button>
+            <button class="ptile reveal" type="button" data-lightbox="bamboo" data-label="Bamboo Club, Coorg" data-note="Photo 3 of 3" aria-label="View photo 3: Bamboo Club, Coorg"><img src="https://gmpools.in/images/completed_projects/bamboo_club/3.jpg" alt="Completed pool project at Bamboo Club, Coorg, photo 3" loading="lazy" decoding="async"></button>
+          </div>
+        </div>
+
+        <div class="proj" id="p-corporation">
+          <header class="proj__head"><h3>Corporation Pool</h3><span>Hubballi</span></header>
+          <div class="proj-grid">
+            <button class="ptile reveal" type="button" data-lightbox="corporation" data-label="Corporation Pool, Hubballi" data-note="Photo 1 of 3" aria-label="View photo 1: Corporation Pool, Hubballi"><img src="https://gmpools.in/images/completed_projects/corporation_pool/1.jpg" alt="Completed pool project at Corporation Pool, Hubballi, photo 1" loading="lazy" decoding="async"></button>
+            <button class="ptile reveal" type="button" data-lightbox="corporation" data-label="Corporation Pool, Hubballi" data-note="Photo 2 of 3" aria-label="View photo 2: Corporation Pool, Hubballi"><img src="https://gmpools.in/images/completed_projects/corporation_pool/2.jpg" alt="Completed pool project at Corporation Pool, Hubballi, photo 2" loading="lazy" decoding="async"></button>
+            <button class="ptile reveal" type="button" data-lightbox="corporation" data-label="Corporation Pool, Hubballi" data-note="Photo 3 of 3" aria-label="View photo 3: Corporation Pool, Hubballi"><img src="https://gmpools.in/images/completed_projects/corporation_pool/3.jpg" alt="Completed pool project at Corporation Pool, Hubballi, photo 3" loading="lazy" decoding="async"></button>
+          </div>
+        </div>
+
+        <div class="proj" id="p-gowrishankar">
+          <header class="proj__head"><h3>Gowrishankar</h3><span>Tumkur</span></header>
+          <div class="proj-grid">
+            <button class="ptile reveal" type="button" data-lightbox="gowrishankar" data-label="Gowrishankar, Tumkur" data-note="Photo 1 of 3" aria-label="View photo 1: Gowrishankar, Tumkur"><img src="https://gmpools.in/images/completed_projects/gowrishankar/1.jpg" alt="Completed pool project at Gowrishankar, Tumkur, photo 1" loading="lazy" decoding="async"></button>
+            <button class="ptile reveal" type="button" data-lightbox="gowrishankar" data-label="Gowrishankar, Tumkur" data-note="Photo 2 of 3" aria-label="View photo 2: Gowrishankar, Tumkur"><img src="https://gmpools.in/images/completed_projects/gowrishankar/2.jpg" alt="Completed pool project at Gowrishankar, Tumkur, photo 2" loading="lazy" decoding="async"></button>
+            <button class="ptile reveal" type="button" data-lightbox="gowrishankar" data-label="Gowrishankar, Tumkur" data-note="Photo 3 of 3" aria-label="View photo 3: Gowrishankar, Tumkur"><img src="https://gmpools.in/images/completed_projects/gowrishankar/3.jpg" alt="Completed pool project at Gowrishankar, Tumkur, photo 3" loading="lazy" decoding="async"></button>
+          </div>
+        </div>
+
+        <div class="proj" id="p-harish">
+          <header class="proj__head"><h3>Harish Revankar</h3><span>Hubballi</span></header>
+          <div class="proj-grid">
+            <button class="ptile reveal" type="button" data-lightbox="harish" data-label="Harish Revankar, Hubballi" data-note="Photo 1 of 3" aria-label="View photo 1: Harish Revankar, Hubballi"><img src="https://gmpools.in/images/completed_projects/harish_revankar/1.jpg" alt="Completed pool project at Harish Revankar, Hubballi, photo 1" loading="lazy" decoding="async"></button>
+            <button class="ptile reveal" type="button" data-lightbox="harish" data-label="Harish Revankar, Hubballi" data-note="Photo 2 of 3" aria-label="View photo 2: Harish Revankar, Hubballi"><img src="https://gmpools.in/images/completed_projects/harish_revankar/2.jpg" alt="Completed pool project at Harish Revankar, Hubballi, photo 2" loading="lazy" decoding="async"></button>
+            <button class="ptile reveal" type="button" data-lightbox="harish" data-label="Harish Revankar, Hubballi" data-note="Photo 3 of 3" aria-label="View photo 3: Harish Revankar, Hubballi"><img src="https://gmpools.in/images/completed_projects/harish_revankar/3.jpg" alt="Completed pool project at Harish Revankar, Hubballi, photo 3" loading="lazy" decoding="async"></button>
+          </div>
+        </div>
+
+        <div class="proj" id="p-sharanya-mysore">
+          <header class="proj__head"><h3>Sharanya Farm</h3><span>Mysore Road / T. Narasipura</span></header>
+          <div class="proj-grid">
+            <button class="ptile reveal" type="button" data-lightbox="sharanya-mysore" data-label="Sharanya Farm, Mysore Road" data-note="Photo 1 of 6" aria-label="View photo 1: Sharanya Farm, Mysore Road"><img src="https://gmpools.in/images/completed_projects/sharanya_farm_mysore/1.jpg" alt="Completed pool project at Sharanya Farm, Mysore Road, photo 1" loading="lazy" decoding="async"></button>
+            <button class="ptile reveal" type="button" data-lightbox="sharanya-mysore" data-label="Sharanya Farm, Mysore Road" data-note="Photo 2 of 6" aria-label="View photo 2: Sharanya Farm, Mysore Road"><img src="https://gmpools.in/images/completed_projects/sharanya_farm_mysore/2.jpg" alt="Completed pool project at Sharanya Farm, Mysore Road, photo 2" loading="lazy" decoding="async"></button>
+            <button class="ptile reveal" type="button" data-lightbox="sharanya-mysore" data-label="Sharanya Farm, Mysore Road" data-note="Photo 3 of 6" aria-label="View photo 3: Sharanya Farm, Mysore Road"><img src="https://gmpools.in/images/completed_projects/sharanya_farm_mysore/3.jpg" alt="Completed pool project at Sharanya Farm, Mysore Road, photo 3" loading="lazy" decoding="async"></button>
+            <button class="ptile reveal" type="button" data-lightbox="sharanya-mysore" data-label="Sharanya Farm, Mysore Road" data-note="Photo 4 of 6" aria-label="View photo 4: Sharanya Farm, Mysore Road"><img src="https://gmpools.in/images/completed_projects/sharanya_farm_mysore/4.jpg" alt="Completed pool project at Sharanya Farm, Mysore Road, photo 4" loading="lazy" decoding="async"></button>
+            <button class="ptile reveal" type="button" data-lightbox="sharanya-mysore" data-label="Sharanya Farm, Mysore Road" data-note="Photo 5 of 6" aria-label="View photo 5: Sharanya Farm, Mysore Road"><img src="https://gmpools.in/images/completed_projects/sharanya_farm_mysore/5.jpg" alt="Completed pool project at Sharanya Farm, Mysore Road, photo 5" loading="lazy" decoding="async"></button>
+            <button class="ptile reveal" type="button" data-lightbox="sharanya-mysore" data-label="Sharanya Farm, Mysore Road" data-note="Photo 6 of 6" aria-label="View photo 6: Sharanya Farm, Mysore Road"><img src="https://gmpools.in/images/completed_projects/sharanya_farm_mysore/6.jpg" alt="Completed pool project at Sharanya Farm, Mysore Road, photo 6" loading="lazy" decoding="async"></button>
+          </div>
+        </div>
+
+        <div class="proj" id="p-sharanya-krpet">
+          <header class="proj__head"><h3>Sharanya Farm</h3><span>K. R. Pet</span></header>
+          <div class="proj-grid">
+            <button class="ptile reveal" type="button" data-lightbox="sharanya-krpet" data-label="Sharanya Farm, K. R. Pet" data-note="Photo 1 of 3" aria-label="View photo 1: Sharanya Farm, K. R. Pet"><img src="https://gmpools.in/images/completed_projects/sharanya_farm_krpet/1.jpg" alt="Completed pool project at Sharanya Farm, K. R. Pet, photo 1" loading="lazy" decoding="async"></button>
+            <button class="ptile reveal" type="button" data-lightbox="sharanya-krpet" data-label="Sharanya Farm, K. R. Pet" data-note="Photo 2 of 3" aria-label="View photo 2: Sharanya Farm, K. R. Pet"><img src="https://gmpools.in/images/completed_projects/sharanya_farm_krpet/2.jpg" alt="Completed pool project at Sharanya Farm, K. R. Pet, photo 2" loading="lazy" decoding="async"></button>
+            <button class="ptile reveal" type="button" data-lightbox="sharanya-krpet" data-label="Sharanya Farm, K. R. Pet" data-note="Photo 3 of 3" aria-label="View photo 3: Sharanya Farm, K. R. Pet"><img src="https://gmpools.in/images/completed_projects/sharanya_farm_krpet/3.jpg" alt="Completed pool project at Sharanya Farm, K. R. Pet, photo 3" loading="lazy" decoding="async"></button>
+          </div>
+        </div>
+
+        <div class="proj" id="p-skylark">
+          <header class="proj__head"><h3>Skylark Homestay</h3><span>Sakaleshpura</span></header>
+          <div class="proj-grid">
+            <button class="ptile reveal" type="button" data-lightbox="skylark" data-label="Skylark Homestay, Sakaleshpura" data-note="Photo 1 of 3" aria-label="View photo 1: Skylark Homestay, Sakaleshpura"><img src="https://gmpools.in/images/completed_projects/skylark/1.jpg" alt="Completed pool project at Skylark Homestay, Sakaleshpura, photo 1" loading="lazy" decoding="async"></button>
+            <button class="ptile reveal" type="button" data-lightbox="skylark" data-label="Skylark Homestay, Sakaleshpura" data-note="Photo 2 of 3" aria-label="View photo 2: Skylark Homestay, Sakaleshpura"><img src="https://gmpools.in/images/completed_projects/skylark/2.jpg" alt="Completed pool project at Skylark Homestay, Sakaleshpura, photo 2" loading="lazy" decoding="async"></button>
+            <button class="ptile reveal" type="button" data-lightbox="skylark" data-label="Skylark Homestay, Sakaleshpura" data-note="Photo 3 of 3" aria-label="View photo 3: Skylark Homestay, Sakaleshpura"><img src="https://gmpools.in/images/completed_projects/skylark/3.jpg" alt="Completed pool project at Skylark Homestay, Sakaleshpura, photo 3" loading="lazy" decoding="async"></button>
+          </div>
+        </div>
+
+        <div class="proj" id="p-olympic">
+          <header class="proj__head"><h3>Olympic Sports Stadium</h3><span>Bagalkot</span></header>
+          <div class="proj-grid">
+            <button class="ptile reveal" type="button" data-lightbox="olympic" data-label="Olympic Sports Stadium, Bagalkot" data-note="Photo 1 of 3" aria-label="View photo 1: Olympic Sports Stadium, Bagalkot"><img src="https://gmpools.in/images/completed_projects/olympic_stadium/1.jpg" alt="Completed pool project at Olympic Sports Stadium, Bagalkot, photo 1" loading="lazy" decoding="async"></button>
+            <button class="ptile reveal" type="button" data-lightbox="olympic" data-label="Olympic Sports Stadium, Bagalkot" data-note="Photo 2 of 3" aria-label="View photo 2: Olympic Sports Stadium, Bagalkot"><img src="https://gmpools.in/images/completed_projects/olympic_stadium/2.jpg" alt="Completed pool project at Olympic Sports Stadium, Bagalkot, photo 2" loading="lazy" decoding="async"></button>
+            <button class="ptile reveal" type="button" data-lightbox="olympic" data-label="Olympic Sports Stadium, Bagalkot" data-note="Photo 3 of 3" aria-label="View photo 3: Olympic Sports Stadium, Bagalkot"><img src="https://gmpools.in/images/completed_projects/olympic_stadium/3.jpg" alt="Completed pool project at Olympic Sports Stadium, Bagalkot, photo 3" loading="lazy" decoding="async"></button>
+          </div>
+        </div>
+
+        <div class="proj" id="p-wv-nandi">
+          <header class="proj__head"><h3>Wild Valley</h3><span>Nandi Hills</span></header>
+          <div class="proj-grid">
+            <button class="ptile reveal" type="button" data-lightbox="wv-nandi" data-label="Wild Valley, Nandi Hills" data-note="Photo 1 of 6" aria-label="View photo 1: Wild Valley, Nandi Hills"><img src="https://gmpools.in/images/completed_projects/wild_valley_nandihills/1.jpg" alt="Completed pool project at Wild Valley, Nandi Hills, photo 1" loading="lazy" decoding="async"></button>
+            <button class="ptile reveal" type="button" data-lightbox="wv-nandi" data-label="Wild Valley, Nandi Hills" data-note="Photo 2 of 6" aria-label="View photo 2: Wild Valley, Nandi Hills"><img src="https://gmpools.in/images/completed_projects/wild_valley_nandihills/2.jpg" alt="Completed pool project at Wild Valley, Nandi Hills, photo 2" loading="lazy" decoding="async"></button>
+            <button class="ptile reveal" type="button" data-lightbox="wv-nandi" data-label="Wild Valley, Nandi Hills" data-note="Photo 3 of 6" aria-label="View photo 3: Wild Valley, Nandi Hills"><img src="https://gmpools.in/images/completed_projects/wild_valley_nandihills/3.jpg" alt="Completed pool project at Wild Valley, Nandi Hills, photo 3" loading="lazy" decoding="async"></button>
+            <button class="ptile reveal" type="button" data-lightbox="wv-nandi" data-label="Wild Valley, Nandi Hills" data-note="Photo 4 of 6" aria-label="View photo 4: Wild Valley, Nandi Hills"><img src="https://gmpools.in/images/completed_projects/wild_valley_nandihills/4.jpg" alt="Completed pool project at Wild Valley, Nandi Hills, photo 4" loading="lazy" decoding="async"></button>
+            <button class="ptile reveal" type="button" data-lightbox="wv-nandi" data-label="Wild Valley, Nandi Hills" data-note="Photo 5 of 6" aria-label="View photo 5: Wild Valley, Nandi Hills"><img src="https://gmpools.in/images/completed_projects/wild_valley_nandihills/5.jpg" alt="Completed pool project at Wild Valley, Nandi Hills, photo 5" loading="lazy" decoding="async"></button>
+            <button class="ptile reveal" type="button" data-lightbox="wv-nandi" data-label="Wild Valley, Nandi Hills" data-note="Photo 6 of 6" aria-label="View photo 6: Wild Valley, Nandi Hills"><img src="https://gmpools.in/images/completed_projects/wild_valley_nandihills/6.jpg" alt="Completed pool project at Wild Valley, Nandi Hills, photo 6" loading="lazy" decoding="async"></button>
+          </div>
+        </div>
+
+        <div class="proj" id="p-wv-sakaleshpur">
+          <header class="proj__head"><h3>Wild Valley</h3><span>Sakaleshpur</span></header>
+          <div class="proj-grid">
+            <button class="ptile reveal" type="button" data-lightbox="wv-sakaleshpur" data-label="Wild Valley, Sakaleshpur" data-note="Photo 1 of 6" aria-label="View photo 1: Wild Valley, Sakaleshpur"><img src="https://gmpools.in/images/completed_projects/wild_valley_sakaleshpur/1.jpg" alt="Completed pool project at Wild Valley, Sakaleshpur, photo 1" loading="lazy" decoding="async"></button>
+            <button class="ptile reveal" type="button" data-lightbox="wv-sakaleshpur" data-label="Wild Valley, Sakaleshpur" data-note="Photo 2 of 6" aria-label="View photo 2: Wild Valley, Sakaleshpur"><img src="https://gmpools.in/images/completed_projects/wild_valley_sakaleshpur/2.jpg" alt="Completed pool project at Wild Valley, Sakaleshpur, photo 2" loading="lazy" decoding="async"></button>
+            <button class="ptile reveal" type="button" data-lightbox="wv-sakaleshpur" data-label="Wild Valley, Sakaleshpur" data-note="Photo 3 of 6" aria-label="View photo 3: Wild Valley, Sakaleshpur"><img src="https://gmpools.in/images/completed_projects/wild_valley_sakaleshpur/3.jpg" alt="Completed pool project at Wild Valley, Sakaleshpur, photo 3" loading="lazy" decoding="async"></button>
+            <button class="ptile reveal" type="button" data-lightbox="wv-sakaleshpur" data-label="Wild Valley, Sakaleshpur" data-note="Photo 4 of 6" aria-label="View photo 4: Wild Valley, Sakaleshpur"><img src="https://gmpools.in/images/completed_projects/wild_valley_sakaleshpur/4.jpg" alt="Completed pool project at Wild Valley, Sakaleshpur, photo 4" loading="lazy" decoding="async"></button>
+            <button class="ptile reveal" type="button" data-lightbox="wv-sakaleshpur" data-label="Wild Valley, Sakaleshpur" data-note="Photo 5 of 6" aria-label="View photo 5: Wild Valley, Sakaleshpur"><img src="https://gmpools.in/images/completed_projects/wild_valley_sakaleshpur/5.jpg" alt="Completed pool project at Wild Valley, Sakaleshpur, photo 5" loading="lazy" decoding="async"></button>
+            <button class="ptile reveal" type="button" data-lightbox="wv-sakaleshpur" data-label="Wild Valley, Sakaleshpur" data-note="Photo 6 of 6" aria-label="View photo 6: Wild Valley, Sakaleshpur"><img src="https://gmpools.in/images/completed_projects/wild_valley_sakaleshpur/6.jpg" alt="Completed pool project at Wild Valley, Sakaleshpur, photo 6" loading="lazy" decoding="async"></button>
+          </div>
+        </div>
+
+        <div class="proj" id="p-maddur">
+          <header class="proj__head"><h3>Maddur</h3><span>Karnataka</span></header>
+          <div class="proj-grid">
+            <button class="ptile reveal" type="button" data-lightbox="maddur" data-label="Maddur" data-note="Photo 1 of 3" aria-label="View photo 1: Maddur"><img src="https://gmpools.in/images/completed_projects/maddur/1.jpg" alt="Completed pool project at Maddur, photo 1" loading="lazy" decoding="async"></button>
+            <button class="ptile reveal" type="button" data-lightbox="maddur" data-label="Maddur" data-note="Photo 2 of 3" aria-label="View photo 2: Maddur"><img src="https://gmpools.in/images/completed_projects/maddur/2.jpg" alt="Completed pool project at Maddur, photo 2" loading="lazy" decoding="async"></button>
+            <button class="ptile reveal" type="button" data-lightbox="maddur" data-label="Maddur" data-note="Photo 3 of 3" aria-label="View photo 3: Maddur"><img src="https://gmpools.in/images/completed_projects/maddur/3.jpg" alt="Completed pool project at Maddur, photo 3" loading="lazy" decoding="async"></button>
+          </div>
+        </div>
+
+        <div class="proj" id="p-ganga">
+          <header class="proj__head"><h3>Ganga Farm</h3><span>Nelamangala</span></header>
+          <div class="proj-grid">
+            <button class="ptile reveal" type="button" data-lightbox="ganga" data-label="Ganga Farm, Nelamangala" data-note="Photo 1 of 3" aria-label="View photo 1: Ganga Farm, Nelamangala"><img src="https://gmpools.in/images/completed_projects/ganga_farm/1.jpg" alt="Completed pool project at Ganga Farm, Nelamangala, photo 1" loading="lazy" decoding="async"></button>
+            <button class="ptile reveal" type="button" data-lightbox="ganga" data-label="Ganga Farm, Nelamangala" data-note="Photo 2 of 3" aria-label="View photo 2: Ganga Farm, Nelamangala"><img src="https://gmpools.in/images/completed_projects/ganga_farm/2.jpg" alt="Completed pool project at Ganga Farm, Nelamangala, photo 2" loading="lazy" decoding="async"></button>
+            <button class="ptile reveal" type="button" data-lightbox="ganga" data-label="Ganga Farm, Nelamangala" data-note="Photo 3 of 3" aria-label="View photo 3: Ganga Farm, Nelamangala"><img src="https://gmpools.in/images/completed_projects/ganga_farm/3.jpg" alt="Completed pool project at Ganga Farm, Nelamangala, photo 3" loading="lazy" decoding="async"></button>
+          </div>
+        </div>
+
+        <div class="proj" id="p-coimbatore">
+          <header class="proj__head"><h3>Coimbatore</h3><span>Tamil Nadu</span></header>
+          <div class="proj-grid">
+            <button class="ptile reveal" type="button" data-lightbox="coimbatore" data-label="Coimbatore" data-note="Photo 1 of 1" aria-label="View photo 1: Coimbatore"><img src="https://gmpools.in/images/completed_projects/coimbatore/1.jpg" alt="Completed pool project in Coimbatore, photo 1" loading="lazy" decoding="async"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SERVICES ===================== -->
+    <section class="section bg-ivory" id="services" data-page="services" aria-labelledby="services-title">
+      <div class="container">
+        <header class="section-head section-head--split">
+          <h2 class="display reveal" id="services-title">
+            <span class="line">Everything your pool</span>
+            <span class="line">needs, in one place.</span>
+          </h2>
+          <p class="lede reveal" style="--d:.1s">From new construction and refurbishment to plumbing, maintenance,
+            chemicals and equipment, GM Pools is dedicated to every stage of your swimming pool.</p>
+        </header>
+
+        <div class="feature-grid">
+          <a class="feature" href="#service-index">
+            <div class="feature__media reveal">
+              <img src="https://gmpools.in/images/completed_projects/bamboo_club/2.jpg"
+                alt="Completed pool project at Bamboo Club, Coorg" loading="lazy" decoding="async">
+            </div>
+            <div class="feature__body">
+              <span class="feature__index"><img class="feature__icon" src="https://www.gmpools.in/images/spc_icon.png" alt="" width="40" height="40" loading="lazy"> 01</span>
+              <h3>Swimming Pool Construction</h3>
+              <p>New pool construction, built to your plans and to the standard our customers expect.</p>
+              <span class="feature__go">Explore Services <svg width="18" height="10" viewBox="0 0 18 10" fill="none"
+                  stroke="currentColor" stroke-width="1.4" aria-hidden="true">
+                  <path d="M0 5h16M12 1l4 4-4 4" />
+                </svg></span>
+            </div>
+          </a>
+
+          <a class="feature" href="#service-index">
+            <div class="feature__media reveal" style="--d:.1s">
+              <img src="https://gmpools.in/images/completed_projects/corporation_pool/2.jpg"
+                alt="Completed pool project at Corporation Pool, Hubballi" loading="lazy" decoding="async">
+            </div>
+            <div class="feature__body">
+              <span class="feature__index"><img class="feature__icon" src="https://www.gmpools.in/images/spr_icon.png" alt="" width="40" height="40" loading="lazy"> 02</span>
+              <h3>Swimming Pool Refurbishment</h3>
+              <p>Bring an existing pool back to its best, with refurbishment work across the pool and its surroundings.</p>
+              <span class="feature__go">Explore Services <svg width="18" height="10" viewBox="0 0 18 10" fill="none"
+                  stroke="currentColor" stroke-width="1.4" aria-hidden="true">
+                  <path d="M0 5h16M12 1l4 4-4 4" />
+                </svg></span>
+            </div>
+          </a>
+
+          <a class="feature" href="#service-index">
+            <div class="feature__media reveal">
+              <img src="https://gmpools.in/images/completed_projects/harish_revankar/2.jpg"
+                alt="Completed pool project at Harish Revankar, Hubballi" loading="lazy" decoding="async">
+            </div>
+            <div class="feature__body">
+              <span class="feature__index">03</span>
+              <h3>Plumbing Work</h3>
+              <p>Pool plumbing handled by the same team that builds and maintains the pool.</p>
+              <span class="feature__go">Explore Services <svg width="18" height="10" viewBox="0 0 18 10" fill="none"
+                  stroke="currentColor" stroke-width="1.4" aria-hidden="true">
+                  <path d="M0 5h16M12 1l4 4-4 4" />
+                </svg></span>
+            </div>
+          </a>
+
+          <a class="feature" href="#service-index">
+            <div class="feature__media reveal" style="--d:.1s">
+              <img src="https://gmpools.in/images/completed_projects/coimbatore/1.jpg"
+                alt="Completed pool project in Coimbatore" loading="lazy" decoding="async">
+            </div>
+            <div class="feature__body">
+              <span class="feature__index"><img class="feature__icon" src="https://www.gmpools.in/images/spa_icon.png" alt="" width="40" height="40" loading="lazy"> 04</span>
+              <h3>Products and Accessories</h3>
+              <p>Pool equipment, chemicals, tiles and entertainment equipment, supplied to pool owners and builders.</p>
+              <span class="feature__go">Explore Services <svg width="18" height="10" viewBox="0 0 18 10" fill="none"
+                  stroke="currentColor" stroke-width="1.4" aria-hidden="true">
+                  <path d="M0 5h16M12 1l4 4-4 4" />
+                </svg></span>
+            </div>
+          </a>
+        </div>
+
+        <div class="service-index" id="service-index">
+          <div class="service-index__head">
+            <h3 class="reveal">All services</h3>
+            <p class="reveal" style="--d:.1s">Whether you are building, repairing or maintaining, we have you covered.</p>
+          </div>
+          <div class="service-cols">
+            <div class="service-col reveal">
+              <h4>Build and refurbish</h4>
+              <ul>
+                <li>Swimming Pool Construction</li>
+                <li>Swimming Pool Refurbishment</li>
+                <li>Plumbing Work</li>
+              </ul>
+            </div>
+            <div class="service-col reveal" style="--d:.1s">
+              <h4>Maintenance</h4>
+              <ul>
+                <li>Maintenance contracts <small>Monthly or yearly, in and around Karnataka</small></li>
+                <li>Swimming pool chemicals</li>
+                <li>Swimming pool tiles</li>
+              </ul>
+            </div>
+            <div class="service-col reveal" style="--d:.2s">
+              <h4>Equipment and entertainment</h4>
+              <ul>
+                <li>Swimming pool equipment and accessories</li>
+                <li>Water entertainment and amusement equipment</li>
+                <li>Fountain equipment</li>
+                <li>Competition equipment</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="services__cta">
+          <div>
+            <h3>Need a pool built, refurbished or maintained?</h3>
+            <p>Contact GM Pools for all your swimming pool needs. Our team is ready to help with your project.</p>
+          </div>
+          <div class="cta-row">
+            <a class="btn btn--primary" href="#contact">Send an Enquiry</a>
+            <a class="link" href="tel:+917975692269">Call +91 79756 92269</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== TEAM (dark) ===================== -->
+    <section class="section newbuild on-dark" id="team" data-page="about" aria-labelledby="team-title">
+      <div class="newbuild__bg" aria-hidden="true">
+        <img src="https://gmpools.in/images/completed_projects/olympic_stadium/3.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="container">
+        <div class="newbuild__top">
+          <div>
+            <h2 class="display newbuild__title reveal" id="team-title">
+              <span class="line">Competitive, reliable,</span>
+              <span class="line">innovative.</span>
+            </h2>
+            <p class="lede reveal" style="--d:.1s">Our team is made up of well-experienced and qualified young
+              professionals, all dedicated to customer satisfaction.</p>
+          </div>
+
+          <aside class="warranty reveal" style="--d:.15s" aria-label="Our commitment">
+            <p class="label warranty__label">Our commitment</p>
+            <p class="warranty__big">Built around the customer.</p>
+            <p>Every member of the GM Pools team works hard for customer satisfaction, from the first conversation to the
+              finished pool.</p>
+          </aside>
+        </div>
+
+        <div class="pillars">
+          <div class="pillar reveal">
+            <h3>Highly competitive</h3>
+            <p>A team that strives to deliver the best work at every project, large or small.</p>
+          </div>
+          <div class="pillar reveal" style="--d:.1s">
+            <h3>Reliable</h3>
+            <p>Dependable service from our team, backed by years of pool experience.</p>
+          </div>
+          <div class="pillar reveal" style="--d:.2s">
+            <h3>Dedicated</h3>
+            <p>Committed to every customer and every project we take on.</p>
+          </div>
+          <div class="pillar reveal" style="--d:.3s">
+            <h3>Innovative</h3>
+            <p>Enthusiastic about new ideas that make pools more enjoyable and easier to care for.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== WHERE WE WORK ===================== -->
+    <section class="section bg-sand" id="areas" data-page="areas" aria-labelledby="areas-title">
+      <div class="container">
+        <div class="area__grid">
+          <div class="area__copy">
+            <h2 class="display reveal" id="areas-title">Where we work</h2>
+            <p class="reveal" style="--d:.1s">We undertake swimming pool maintenance contracts on a monthly or yearly
+              basis in and around Karnataka. Our completed projects are spread across the state.</p>
+            <ul class="area__list reveal" style="--d:.15s">
+              <li class="is-home">Bengaluru <small>Head office</small></li>
+              <li>Nelamangala <small>Karnataka</small></li>
+              <li>Nandi Hills <small>Karnataka</small></li>
+              <li>Coorg <small>Karnataka</small></li>
+              <li>Hubballi <small>Karnataka</small></li>
+              <li>Bagalkot <small>Karnataka</small></li>
+              <li>Tumkur <small>Karnataka</small></li>
+              <li>Maddur <small>Karnataka</small></li>
+              <li>Mysore Road <small>Karnataka</small></li>
+              <li>K. R. Pet <small>Karnataka</small></li>
+              <li>Sakaleshpur <small>Karnataka</small></li>
+              <li>Coimbatore <small>Tamil Nadu</small></li>
+            </ul>
+          </div>
+
+          <div class="area__photos reveal" style="--d:.1s">
+            <figure>
+              <img src="https://gmpools.in/images/completed_projects/bamboo_club/3.jpg"
+                alt="Completed pool project at Bamboo Club, Coorg" loading="lazy" decoding="async">
+            </figure>
+            <figure>
+              <img src="https://gmpools.in/images/completed_projects/corporation_pool/1.jpg"
+                alt="Completed pool project at Corporation Pool, Hubballi" loading="lazy" decoding="async">
+            </figure>
+            <figure>
+              <img src="https://gmpools.in/images/completed_projects/ganga_farm/1.jpg"
+                alt="Completed pool project at Ganga Farm, Nelamangala" loading="lazy" decoding="async">
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CONTACT ===================== -->
+    <section class="section contact on-dark" id="contact" data-page="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="contact__grid">
+          <div>
+            <h2 class="display contact__title reveal" id="contact-title">
+              <span class="line">Let’s build your</span>
+              <span class="line">next pool.</span>
+            </h2>
+            <p class="lede reveal" style="--d:.1s">Tell us about your project, whether it is a new pool, a refurbishment,
+              plumbing work or maintenance, and we will get back to you.</p>
+
+            <div class="cta-row reveal contact__call" style="--d:.15s">
+              <a class="btn btn--primary" href="#estimate-form">Send an Enquiry</a>
+              <a class="btn btn--ghost" href="tel:+917975692269">Call GM Pools</a>
+            </div>
+
+            <dl class="contact__details reveal" style="--d:.2s">
+              <div>
+                <dt>Phone</dt>
+                <dd><a class="contact__phone-big" href="tel:+917975692269">+91 79756 92269</a></dd>
+              </div>
+              <div>
+                <dt>Email</dt>
+                <dd><a href="mailto:info@gmpools.in">info@gmpools.in</a></dd>
+              </div>
+              <div>
+                <dt>Address</dt>
+                <dd>
+                  <address>GM Pools<br>Post Office Rd, Nelamangala<br>Bengaluru 562123, Karnataka</address>
+                </dd>
+              </div>
+            </dl>
+          </div>
+
+          <form class="form reveal" id="estimate-form" style="--d:.1s" novalidate aria-labelledby="form-title">
+            <h3 id="form-title">Send an enquiry</h3>
+
+            <div class="field">
+              <label for="f-name">Name</label>
+              <input id="f-name" name="name" type="text" autocomplete="name" required>
+            </div>
+            <div class="field--row">
+              <div class="field">
+                <label for="f-email">Email</label>
+                <input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" required>
+              </div>
+              <div class="field">
+                <label for="f-phone">Phone</label>
+                <input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required>
+              </div>
+            </div>
+            <div class="field">
+              <label for="f-message">Message</label>
+              <textarea id="f-message" name="message" rows="4" required></textarea>
+            </div>
+
+            <div class="form__hp" aria-hidden="true">
+              <label for="f-website">Leave this field empty</label>
+              <input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off">
+            </div>
+
+            <button class="btn btn--primary" type="submit">Send Enquiry</button>
+            <p class="form__status" id="form-status" role="status" aria-live="polite"></p>
+            <p class="form__fine">Prefer to talk? Call <a class="link" href="tel:+917975692269">+91 79756 92269</a>.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer on-dark">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <div class="footer__logo-plate">
+            <img class="footer__logo" src="GM pool logo.png" alt="GM Pools" loading="lazy" decoding="async">
+          </div>
+          <p>Swimming pool construction, refurbishment and maintenance</p>
+          <p>Serving Karnataka</p>
+        </div>
+
+        <div>
+          <h2>Contact</h2>
+          <ul>
+            <li><a href="tel:+917975692269">+91 79756 92269</a></li>
+            <li><a href="mailto:info@gmpools.in">info@gmpools.in</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h2>Visit</h2>
+          <address>Post Office Rd, Nelamangala<br>Bengaluru 562123<br>Karnataka</address>
+        </div>
+
+        <nav aria-label="Footer">
+          <h2>Explore</h2>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#areas">Where We Work</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="footer__base">
+        <p>&copy; <span data-year>2026</span> GM Pools. All rights reserved.</p>
+        <p>Bengaluru, Karnataka</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Sticky mobile bar: tap-to-call + enquiry -->
+  <div class="mbar">
+    <a class="mbar__call" href="tel:+917975692269">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+        aria-hidden="true">
+        <path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z" />
+      </svg>
+      Call Now
+    </a>
+    <a class="mbar__estimate" href="#contact">Send an Enquiry</a>
+  </div>
+
+  <!-- Lightbox -->
+  <dialog class="lightbox" id="lightbox" aria-label="Project gallery">
+    <div class="lightbox__bar">
+      <p class="lightbox__count" aria-live="polite"></p>
+      <button class="lightbox__btn" type="button" data-lb-close aria-label="Close gallery">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+          aria-hidden="true">
+          <path d="M5 5l14 14M19 5L5 19" />
+        </svg>
+      </button>
+    </div>
+    <button class="lightbox__btn lightbox__btn--prev" type="button" data-lb-prev aria-label="Previous photo">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+        aria-hidden="true">
+        <path d="M15 5l-7 7 7 7" />
+      </svg>
+    </button>
+    <figure class="lightbox__stage">
+      <img class="lightbox__img" src="" alt="">
+      <figcaption class="lightbox__cap"><strong></strong><span></span></figcaption>
+    </figure>
+    <button class="lightbox__btn lightbox__btn--next" type="button" data-lb-next aria-label="Next photo">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+        aria-hidden="true">
+        <path d="M9 5l7 7-7 7" />
+      </svg>
+    </button>
+  </dialog>
+<script>
+/* ==========================================================================
+   GM POOLS — main.js
+   Vanilla JS, no dependencies. Everything degrades gracefully if it fails:
+   content is visible without JS, and the numbers in the HTML are the final values.
+   ========================================================================== */
+(() => {
+  'use strict';
+
+  /* ---- Configuration ---------------------------------------------------- */
+  // Enquiry form delivery. Paste the endpoint from your form service
+  // (e.g. a Formspree / Getform / Basin URL) to send submissions in the background.
+  // Leave empty to open the visitor's email app with the enquiry pre-filled.
+  const FORM_ENDPOINT = '';
+  const CONTACT_EMAIL = 'info@gmpools.in';
+  const PHONE_DISPLAY = '+91 79756 92269';
+
+  /* ---- Helpers ---------------------------------------------------------- */
+  const $ = (sel, root = document) => root.querySelector(sel);
+  const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  const hasIO = 'IntersectionObserver' in window;
+
+  /* ---- Footer year ------------------------------------------------------ */
+  const yearEl = $('[data-year]');
+  if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+
+  /* ---- Navigation: transparent -> ivory on scroll, hero parallax -------- */
+  const nav = $('[data-nav]');
+  const heroImg = $('.hero__img');
+  const hero = $('.hero');
+  let ticking = false;
+
+  const onScroll = () => {
+    const y = window.scrollY;
+    if (nav) nav.classList.toggle('is-scrolled', y > 40);
+    if (nav) {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      nav.style.setProperty('--progress', max > 0 ? Math.min(1, y / max).toFixed(4) : '0');
+    }
+    // Very subtle parallax: desktop only, only while the hero is on screen.
+    if (heroImg && hero && !reduceMotion && canHover && y < hero.offsetHeight) {
+      heroImg.style.setProperty('--py', `${(y * 0.06).toFixed(1)}px`);
+    }
+    ticking = false;
+  };
+  window.addEventListener('scroll', () => {
+    if (!ticking) { ticking = true; requestAnimationFrame(onScroll); }
+  }, { passive: true });
+  onScroll();
+
+  /* ---- Mobile menu ------------------------------------------------------ */
+  const toggle = $('.nav__toggle');
+  const menu = $('#menu');
+
+  const setMenu = (open) => {
+    if (!toggle || !menu) return;
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.querySelector('.sr-only').textContent = open ? 'Close menu' : 'Open menu';
+    menu.classList.toggle('is-open', open);
+    document.body.classList.toggle('menu-open', open);
+    if (open) { menu.removeAttribute('inert'); } else { menu.setAttribute('inert', ''); }
+    if (open) { const first = $('a', menu); if (first) setTimeout(() => first.focus({ preventScroll: true }), 120); }
+  };
+
+  if (toggle && menu) {
+    menu.setAttribute('inert', '');
+    toggle.addEventListener('click', () => setMenu(toggle.getAttribute('aria-expanded') !== 'true'));
+    $$('a', menu).forEach((a) => a.addEventListener('click', () => setMenu(false)));
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && menu.classList.contains('is-open')) { setMenu(false); toggle.focus(); }
+    });
+    window.matchMedia('(min-width: 1180px)').addEventListener('change', (e) => { if (e.matches) setMenu(false); });
+  }
+
+  /* ---- Scroll reveals --------------------------------------------------- */
+  // Elements with .reveal, plus the photo wipes in the story and service sections.
+  const revealSelector = '.reveal, .story__main, .story__inset, .feature__media';
+  const revealEls = $$(revealSelector);
+  if (hasIO && !reduceMotion) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-in');
+        io.unobserve(entry.target);
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+    revealEls.forEach((el) => io.observe(el));
+  } else {
+    revealEls.forEach((el) => el.classList.add('is-in'));
+  }
+
+  /* ---- Safety net: never leave content hidden --------------------------- */
+  // If the observer misses an element (some browsers, file:// previews, fast jumps to an anchor),
+  // this sweep reveals anything that is actually inside the viewport.
+  if (hasIO && !reduceMotion) {
+    let pending = false;
+    const sweep = () => {
+      pending = false;
+      const vh = window.innerHeight || document.documentElement.clientHeight;
+      const vw = window.innerWidth || document.documentElement.clientWidth;
+      $$(`${revealSelector}`).forEach((el) => {
+        if (el.classList.contains('is-in')) return;
+        const r = el.getBoundingClientRect();
+        if (r.bottom > 0 && r.top < vh * 0.94 && r.right > 0 && r.left < vw) el.classList.add('is-in');
+      });
+    };
+    const queue = () => { if (!pending) { pending = true; requestAnimationFrame(sweep); } };
+    window.addEventListener('scroll', queue, { passive: true });
+    window.addEventListener('resize', queue);
+    window.addEventListener('load', queue);
+    queue();
+  }
+
+  /* ---- Image safety net: retry once with the other file-extension case --- */
+  // If an image fails, try the other spelling of its extension (.JPG vs .jpg) once.
+  const flipCase = (src) => src.replace(/\.(jpe?g|png)(\?.*)?$/i, (m, ext, q) =>
+    '.' + (ext === ext.toUpperCase() ? ext.toLowerCase() : ext.toUpperCase()) + (q || ''));
+  $$('img').forEach((img) => {
+    const retry = () => {
+      if (img.dataset.retried) return;
+      img.dataset.retried = '1';
+      const cur = img.getAttribute('src') || '';
+      const next = flipCase(cur);
+      if (next !== cur) img.src = next;
+    };
+    img.addEventListener('error', retry);
+    if (img.complete && img.naturalWidth === 0 && img.getAttribute('src')) retry();
+  });
+
+  /* ---- Count-up numbers ------------------------------------------------- */
+  const counters = $$('[data-count]');
+  const runCount = (el) => {
+    const target = Number(el.dataset.count);
+    const suffix = el.dataset.suffix || '';
+    if (!Number.isFinite(target)) return;
+    const duration = 1600;
+    const start = performance.now();
+    const tick = (now) => {
+      const t = Math.min(1, (now - start) / duration);
+      const eased = 1 - Math.pow(1 - t, 3);
+      el.textContent = Math.round(target * eased) + (t === 1 ? suffix : '');
+      if (t < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  };
+  if (hasIO && !reduceMotion && counters.length) {
+    const cio = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        runCount(entry.target);
+        cio.unobserve(entry.target);
+      });
+    }, { threshold: 0.6 });
+    counters.forEach((el) => cio.observe(el));
+  }
+
+  /* ---- Pages: each menu item opens its own page. Only one page is shown at a time. ---- */
+  const navLinks = $$('.nav__links a, .menu__list a');
+  const pageEls = $$('[data-page]');
+  const pageNames = [...new Set(pageEls.map((el) => el.dataset.page))];
+  const PAGE_TITLES = {
+    home: 'GM Pools | Swimming Pool Construction, Refurbishment & Maintenance in Bangalore',
+    services: 'Services | GM Pools',
+    projects: 'Completed Projects | GM Pools',
+    about: 'About | GM Pools',
+    areas: 'Where We Work | GM Pools',
+    contact: 'Contact | GM Pools',
+  };
+  const NAV_OFFSET = 84;
+
+  const showPage = (name) => {
+    pageEls.forEach((el) => el.classList.toggle('is-current', el.dataset.page === name));
+    navLinks.forEach((a) => {
+      if (a.getAttribute('href') === `#${name}`) a.setAttribute('aria-current', 'page');
+      else a.removeAttribute('aria-current');
+    });
+    if (PAGE_TITLES[name]) document.title = PAGE_TITLES[name];
+  };
+
+  // Jump without the smooth-scroll animation, so a page change feels like opening a new screen.
+  const jumpTo = (y) => {
+    const root = document.documentElement;
+    const prev = root.style.scrollBehavior;
+    root.style.scrollBehavior = 'auto';
+    window.scrollTo(0, Math.max(0, y));
+    root.style.scrollBehavior = prev;
+  };
+
+  const route = () => {
+    const raw = decodeURIComponent(location.hash.slice(1));
+    const target = raw ? document.getElementById(raw) : null;
+    const host = target ? target.closest('[data-page]') : null;
+
+    // Anchors outside the pages (for example the skip link to #main) just scroll into view.
+    if (target && !host) { target.scrollIntoView({ block: 'start' }); return; }
+
+    const page = host ? host.dataset.page : (pageNames.includes(raw) ? raw : 'home');
+    showPage(page);
+
+    if (host && host !== target) {
+      // A link to an item inside a page (a project group, the enquiry form): open that page at the item.
+      jumpTo(target.getBoundingClientRect().top + window.scrollY - NAV_OFFSET - 16);
+    } else {
+      jumpTo(0);
+    }
+    // Let the reveal system check what is now on screen.
+    window.dispatchEvent(new Event('scroll'));
+  };
+
+  window.addEventListener('hashchange', route);
+  // Clicking a link to the page you are already on takes you back to the top of it.
+  document.addEventListener('click', (e) => {
+    const a = e.target.closest('a[href^="#"]');
+    if (!a || a.getAttribute('href') !== location.hash) return;
+    e.preventDefault();
+    route();
+  });
+  route();
+
+  /* ---- Hide the sticky mobile bar once the contact section is on screen -- */
+  const mbar = $('.mbar');
+  const contact = $('#contact');
+  if (mbar && contact && hasIO) {
+    const bio = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => mbar.classList.toggle('is-hidden', entry.isIntersecting));
+    }, { threshold: 0.25 });
+    bio.observe(contact);
+  }
+
+  /* ---- Lightbox: project photos, grouped by project --------------------- */
+  const lb = $('#lightbox');
+  if (lb && typeof lb.showModal === 'function') {
+    const lbImg = $('.lightbox__img', lb);
+    const lbTitle = $('.lightbox__cap strong', lb);
+    const lbNote = $('.lightbox__cap span', lb);
+    const lbCount = $('.lightbox__count', lb);
+    let group = [];
+    let index = 0;
+    let opener = null;
+
+    const render = (animate) => {
+      const trigger = group[index];
+      const thumb = $('img', trigger);
+      const swap = () => {
+        lbImg.src = thumb.currentSrc || thumb.src;
+        lbImg.alt = thumb.alt;
+        lbTitle.textContent = trigger.dataset.label || '';
+        lbNote.textContent = trigger.dataset.note || '';
+        lbCount.textContent = `${index + 1} / ${group.length}`;
+        lbImg.classList.remove('is-switching');
+      };
+      if (animate && !reduceMotion) {
+        lbImg.classList.add('is-switching');
+        setTimeout(swap, 180);
+      } else {
+        swap();
+      }
+      // Warm the cache for neighbouring photos.
+      [-1, 1].forEach((d) => {
+        const n = group[(index + d + group.length) % group.length];
+        const t = n && $('img', n);
+        if (t) { const pre = new Image(); pre.src = t.src; }
+      });
+    };
+
+    const open = (trigger) => {
+      group = $$(`[data-lightbox="${trigger.dataset.lightbox}"]`);
+      index = Math.max(0, group.indexOf(trigger));
+      opener = trigger;
+      render(false);
+      lb.showModal();
+      document.body.classList.add('lb-open');
+    };
+    const step = (dir) => {
+      if (group.length < 2) return;
+      index = (index + dir + group.length) % group.length;
+      render(true);
+    };
+
+    document.addEventListener('click', (e) => {
+      const trigger = e.target.closest('[data-lightbox]');
+      if (trigger) { e.preventDefault(); open(trigger); }
+    });
+    $('[data-lb-prev]', lb).addEventListener('click', () => step(-1));
+    $('[data-lb-next]', lb).addEventListener('click', () => step(1));
+    $('[data-lb-close]', lb).addEventListener('click', () => lb.close());
+    lb.addEventListener('click', (e) => { if (e.target === lb) lb.close(); });
+    lb.addEventListener('close', () => {
+      document.body.classList.remove('lb-open');
+      if (opener) opener.focus({ preventScroll: true });
+    });
+    lb.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') { e.preventDefault(); step(-1); }
+      if (e.key === 'ArrowRight') { e.preventDefault(); step(1); }
+    });
+    // Swipe on touch screens
+    let touchX = null;
+    lb.addEventListener('touchstart', (e) => { touchX = e.changedTouches[0].clientX; }, { passive: true });
+    lb.addEventListener('touchend', (e) => {
+      if (touchX === null) return;
+      const dx = e.changedTouches[0].clientX - touchX;
+      if (Math.abs(dx) > 50) step(dx < 0 ? 1 : -1);
+      touchX = null;
+    }, { passive: true });
+  }
+
+  /* ---- Enquiry form ----------------------------------------------------- */
+  const form = $('#estimate-form');
+  const status = $('#form-status');
+  const setStatus = (msg, kind) => {
+    status.textContent = msg;
+    status.className = `form__status${kind ? ` is-${kind}` : ''}`;
+  };
+
+  if (form && status) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (form.elements.website && form.elements.website.value) return; // honeypot
+      if (!form.checkValidity()) { form.reportValidity(); return; }
+
+      const data = {
+        name: form.elements.name.value.trim(),
+        email: form.elements.email.value.trim(),
+        phone: form.elements.phone.value.trim(),
+        message: form.elements.message.value.trim(),
+      };
+      const submit = $('button[type="submit"]', form);
+
+      if (FORM_ENDPOINT) {
+        submit.disabled = true;
+        setStatus('Sending your enquiry…', '');
+        try {
+          const res = await fetch(FORM_ENDPOINT, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+            body: JSON.stringify(data),
+          });
+          if (!res.ok) throw new Error(`HTTP ${res.status}`);
+          form.reset();
+          setStatus('Thank you for contacting GM Pools. We will get back to you as soon as possible.', 'ok');
+        } catch (err) {
+          setStatus(`We couldn’t send your enquiry. Please call ${PHONE_DISPLAY} or email ${CONTACT_EMAIL}.`, 'err');
+        } finally {
+          submit.disabled = false;
+        }
+        return;
+      }
+
+      // No endpoint configured: hand the enquiry to the visitor's email app.
+      const subject = encodeURIComponent('Website enquiry');
+      const body = encodeURIComponent(
+        `Name: ${data.name}\nEmail: ${data.email}\nPhone: ${data.phone}\n\n${data.message}`
+      );
+      window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
+      setStatus(`Your email app should open with your enquiry ready to send. If it doesn’t, call ${PHONE_DISPLAY} or email ${CONTACT_EMAIL}.`, 'ok');
+    });
+  }
+})();
+
+</script>
+</body>
+
+</html>
